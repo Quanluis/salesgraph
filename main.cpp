@@ -1,31 +1,42 @@
 #include <iostream>
-#include <vector>
 #include <fstream>
 using namespace std; 
 
 int main() {
 
-    ifstream file ("sales.txt");
+    ifstream inputFile;
+    string name;
 
-    std::vector<std::string> names;
+    inputFile.open("sales.txt");
 
-    string input;
+    cout << "Today's Sales Chart" << endl << endl;
+    cout << "Gathering input from file..." << endl << endl;
+    cout << "Daily Sales (each * = $1000)" << endl << endl;
+        
+    if(!inputFile){
+        cout << "File not found!!!" << endl;
 
-    if(!file){
-        cout << "File is not found.";
     } else {
-        while(file >> input)
-        {
-        names.push_back(input);
+        for(int count = 1; count <=3; count++ ){
+    
+        int num1, result;
+
+        inputFile >> name;
+
+        num1 = stoi(name);
+
+        result = num1 / 1000;
+
+        for(int star = 1; star <= result; star++ ){
+            cout << "*";
         }
-    for(string name : names)
-        {
-        cout << name << endl;
-        }
+        cout << result << endl;
+     }
     }
 
+    inputFile.close();
 
-   system("pause");
+    system("pause");
 
     return 0;
 
