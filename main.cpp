@@ -23,14 +23,14 @@ int main() {
     cout << "Daily Sales (each * = $1000)" << endl << endl;
 
     //If file is not found run this cout statement
-    //Else run program
+    //else run program
         
     if(!inputFile){
         cout << "File not found!!!" << endl;
 
     } else {
 
-        //for loop executes until conditions are met. 
+        // For loop executes until condition is met. 
 
         for(int count = 1; count <=3; count++ ){
 
@@ -40,32 +40,37 @@ int main() {
 
         inputFile >> name;
 
-        //convert string to int, store in variable
+        // Convert string to int, store in variable
 
         num1 = stoi(name);
 
-        //stores results in int variable
+        // Stores results in int variable
 
         result = num1 / 1000;
 
-        // For loop that prints stars until condition it met
+        // Displays store number
+
+        cout << "Store " << count << ":" << endl <<endl;
+
+        // For loop that prints stars until condition is met
 
         for(int star = 1; star <= result; star++ ){
             cout << "*";
-        }
-        //Display results with number of asterisk
-        //plus numerical count of how are many displayed.
+        } 
+            cout << " ";
+        // Display results with number of asterisk
+        // Plus numerical count of how are many displayed.
 
-        cout << lround(result) << endl;
-     }
+        cout << lround(result) << endl << endl;
+        }
     }
 
-    //close file and pause system
+    // Close file and pause system
 
     inputFile.close();
 
     system("pause");
 
     return 0;
-
+    
 }
